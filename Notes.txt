@@ -1,0 +1,2 @@
+pip3 install langchain langchain-core langchain-openai openai langchain-anthropic langchain-google-genai googl
+e-generativeai langchain-huggingface transformers huggingface-hub numpy scikit-learn
