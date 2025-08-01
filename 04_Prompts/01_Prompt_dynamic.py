@@ -14,16 +14,25 @@ templet = PromptTemplate(
     {text}
     Summary:
     """,
-    input_variables=['text']
+    input_variables=['text'],
+    validate_template=True
 )
 
 input_Data = input("Enter Something Here : \n")
 
 # fill the placeholders
-prompt = templet.invoke({
-    "text" : input_Data
+# prompt = templet.invoke({
+#     "text" : input_Data
+# })
+
+# result = model.invoke(prompt)
+
+
+# We can make chain for this two invoke Activity 
+chain = templet | model
+result = chain.invoke({
+     "text" : input_Data
 })
 
-result = model.invoke(prompt)
 
 print(result.content)
